@@ -1,0 +1,15 @@
+{
+    "name": "kassah/mockserver-pres",
+    "description": "Demo PHP server for MockServer Presentation",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "William Lightning",
+            "email": "kassah@gmail.com"
+        }
+    ],
+    "require": {
+        "ext-curl": "^7"
+    }
+}
