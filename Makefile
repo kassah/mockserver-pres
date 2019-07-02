@@ -44,6 +44,10 @@ clear:
 	@echo "CMD: make clear"
 	@echo "USAGE: Clears logs from MockServer (leaves Expectations intact)"
 	bash ./mockserver/clearlog.sh
+clear-all:
+	@echo "CMD: make clear-all"
+	@echo "USAGE: Clears all from MockServer"
+	bash ./mockserver/clearall.sh
 expectations:
 	@echo "CMD: make expectations"
 	@echo "USAGE: Compiles expectations files into MockServer initializerJson.json"
