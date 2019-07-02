@@ -37,15 +37,15 @@ pull:
 	docker-compose pull
 	docker pull realguess/jq
 ui:
-	@echo "CMD: make mockserver-ui"
+	@echo "CMD: make ui"
 	@echo "USAGE: Running to open browser to mockserver dashboard"
 	open https://mockserver.lightningdev.com/mockserver/dashboard
 clear:
-	@echo "CMD: make mockserver-clear"
+	@echo "CMD: make clear"
 	@echo "USAGE: Clears logs from MockServer (leaves Expectations intact)"
 	bash ./mockserver/clearlog.sh
 expectations:
-	@echo "CMD: make mockserver-expectations"
+	@echo "CMD: make expectations"
 	@echo "USAGE: Compiles expectations files into MockServer initializerJson.json"
 	sh ./mockserver/compileExpectations.sh
 cert:
