@@ -37,6 +37,7 @@ services:
 #      - LOG_LEVEL=ERROR
     volumes:
       - ./mockserver/initializerJson.json:/opt/mockserver/init/initializerJson.json
+      - ./mockserver/resolv.conf:/etc/resolv.conf:ro
 #    networks:
 #      default:
 #        aliases:
