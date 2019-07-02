@@ -48,3 +48,11 @@ expectations:
 	@echo "CMD: make mockserver-expectations"
 	@echo "USAGE: Compiles expectations files into MockServer initializerJson.json"
 	sh ./mockserver/compileExpectations.sh
+cert:
+	@echo "CMD: make cert"
+	@echo "USAGE: Updates the certificates in PHP to also include MockServer CA"
+	bash ./mockserver/updatecert.sh
+php:
+	@echo "CMD: make php"
+	@echo "USAGE: Running to open browser to php app"
+	open https://mockserver.lightningdev.com/app/

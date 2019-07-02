@@ -10,10 +10,19 @@ services:
       - ./docker/nginx/etc:/etc/nginx/conf.d:cached,ro
       - ./docker/nginx/ssl:/etc/nginx/ssl:cached,ro
     restart: always
+    depends_on:
+      - app
+      - mockserver
     networks:
       default:
         aliases:
           - "mockserver.lightningdev.com"
+  app:
+    image: php:7-apache
+    volumes:
+      - ./app/public:/var/www/html/:cached
+      - ./mockserver/CertificateAuthorityCertificate.pem:/etc/ssl/certs/mockserver.pem
+      - ./mockserver/curl-ca.crt:/etc/ssl/certs/ca-certificates.crt
   mockserver:
     image: jamesdbloom/mockserver
     entrypoint:
@@ -22,7 +31,7 @@ services:
       - "80,443"
 #      - -jvmOptions
 #      - -Dmockserver.initializationJsonPath="/opt/mockserver/init/initializerJson.json"
-#      - -Dmockserver.sslSubjectAlternativeNameDomains="mockserver,api.externalservice.com"
+#      - -Dmockserver.sslSubjectAlternativeNameDomains="mockserver,api.ipify.org"
     user: root
 #    environment:
 #      - LOG_LEVEL=ERROR
@@ -31,4 +40,4 @@ services:
 #    networks:
 #      default:
 #        aliases:
-#          - "api.externalservice.com"
+#          - "api.ipify.org"
