@@ -2,11 +2,7 @@
 curl -v -X PUT "https://mockserver.lightningdev.com/mockserver/expectation" -d '{
   "httpRequest" : {
     "method" : "GET",
-    "path" : "/simple",
-    "headers" : {
-      "Accept" : [ "application/json" ],
-      "Accept-Encoding" : [ "gzip, deflate, br" ]
-    }
+    "path" : "/simple"
   },
   "httpResponse" : {
     "body" : "call this multiple times."
