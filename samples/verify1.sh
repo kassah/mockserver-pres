@@ -4,6 +4,6 @@ curl -v -X PUT "https://mockserver.lightningdev.com/mockserver/verify" -d '{
         "path": "/simple"
     },
     "times": {
-        "atLeast": 2
+        "atLeast": 1
     }
 }'
