@@ -1,0 +1,20 @@
+[
+  {
+    "httpRequest": {
+      "method": "GET",
+      "path": "/",
+      "headers": {
+        "Host": [
+          "api.ipify.org"
+        ]
+      }
+    },
+    "httpResponse": {
+      "body": {
+        "type": "STRING",
+        "string": "8.8.8.8",
+        "contentType": "text/plain"
+      }
+    }
+  }
+]
